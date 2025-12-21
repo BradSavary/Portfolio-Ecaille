@@ -8,7 +8,7 @@ import Footer from "./components/Section/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-primary">
+    <div className="min-h-screen bg-background text-foreground">
       <Nav />
       <Header />
       <Profile />

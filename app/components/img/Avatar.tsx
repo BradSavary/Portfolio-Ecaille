@@ -6,11 +6,11 @@ interface LogoProps {
   className?: string;
 }
 
-export default function Logo({ width = 38, height = 38, className }: LogoProps) {
+export default function Avatar({ width = 38, height = 38, className }: LogoProps) {
   return (
     <Image 
-      src="/Logo.svg" 
-      alt="Logo" 
+      src="/avatar.webp" 
+      alt="Avatar" 
       width={width} 
       height={height}
       className={className}

@@ -14,6 +14,7 @@ export default function Arrow({ width = 38, height = 38, className }: LogoProps)
       width={width} 
       height={height}
       className={className}
+      draggable="false"
     />
   );
 }

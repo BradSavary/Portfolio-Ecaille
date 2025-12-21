@@ -40,15 +40,12 @@ html {
   --font-montserrat: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
+  background-image: url('/grid.svg');
+  background-repeat: repeat;
+  background-size: auto;
   color: var(--foreground);
   font-family: var(--font-montserrat);
 }

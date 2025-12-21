@@ -1,42 +1,39 @@
-import Star from "../svg/Star";
 import Arrow from "../svg/Arrow";
 import Logo2 from "../svg/Logo2";
 import BehanceLogo from "../svg/BehanceLogo";
 import InstagramLogo from "../svg/InstagramLogo";
 import LinkedinLogo from "../svg/LinkedinLogo";
 import PinterestLogo from "../svg/PinterestLogo";
+import SectionTitle from "../SectionTitle";
 
 const socials = [
   {
     name: "Behance",
-    url: "https://behance.net",
+    url: "https://www.behance.net/marieneloise1",
     icon: <BehanceLogo />
   },
   {
     name: "Instagram", 
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/ecaille.design/",
     icon: <InstagramLogo />
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com",
+    url: "https://www.linkedin.com/in/eloise-marien/",
     icon: <LinkedinLogo />
   },
   {
     name: "Pinterest",
-    url: "https://pinterest.com",
+    url: "https://fr.pinterest.com/yooeslie/",
     icon: <PinterestLogo />
   }
 ];
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-accent-primary flex flex-col lg:flex-row lg:justify-between pt-6 px-6 md:px-12 lg:px-20 pb-10 md:pb-16 lg:pb-25 gap-6 lg:gap-6">
+    <footer id="footer" className="bg-accent-primary flex flex-col lg:flex-row lg:justify-between pt-6 px-6 md:px-12 lg:px-20 pb-10 md:pb-16 lg:pb-25 gap-6 lg:gap-6 text-background">
         <div className="flex flex-col gap-4 md:gap-5 lg:gap-6 w-full lg:max-w-1/2">
-      <div className="flex items-center gap-2 p-4 md:p-5 lg:p-6 border-accent-secondary border-2 max-w-fit">
-        <Star className="w-8 md:w-12 lg:w-15" color="white" />
-        <p className="text-4xl md:text-5xl lg:text-7xl font-mtpalma">Contactez moi !</p>
-      </div>
+      <SectionTitle title="Contactez moi !" />
       <p className="font-medium text-base md:text-base lg:text-lg lg:max-w-3/4">
         Vous avez une question, un projet ou simplement envie de discuter ? N'hésitez pas à me contacter par mail ou sur mes réseaux sociaux ! :)
       </p>
