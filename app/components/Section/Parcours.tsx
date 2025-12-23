@@ -37,8 +37,8 @@ const parcoursData: ParcoursItem[] = [
 export default function Parcours() {
   return (
     <section className="py-25 px-6 md:px-12 lg:px-20 relative w-full flex justify-center ">
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none ">
-        <ParcoursSVG className="w-full md:max-w-4xl lg:max-w-6xl h-auto object-contain z-0 overflow-visible" />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none h-auto">
+        <ParcoursSVG className="w-full rotate-90 lg:rotate-0 lg:max-w-7xl overflow-hidden h-auto object-cover z-0 " />
       </div>
       <div className="relative z-10">
         <SectionTitle title="Mon parcours" starColor="pink" borderColor="black"/>
