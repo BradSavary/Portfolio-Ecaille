@@ -1,3 +1,4 @@
+import React from "react";
 import SectionTitle from "../SectionTitle";
 import ParcoursSVG  from "../svg/Parcours";
 
@@ -38,17 +39,17 @@ export default function Parcours() {
   return (
     <section className="py-25 px-6 md:px-12 lg:px-20 relative w-full flex justify-center ">
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none h-auto">
-        <ParcoursSVG className="w-full rotate-90 lg:rotate-0 lg:max-w-7xl overflow-hidden h-auto object-cover z-0 " />
+        <ParcoursSVG className="w-full rotate-90 lg:rotate-0 lg:max-w-7xl overflow-hidden h-auto object-cover z-1 " />
       </div>
       <div className="relative z-10">
-        <SectionTitle title="Mon parcours" starColor="pink" borderColor="black"/>
+        <SectionTitle title="Mon parcours" containerClassName="self-start flex items-center gap-2 p-4 md:p-5 lg:p-6 border-1 max-w-fit" starColor="pink" borderColor="black" />
         
         {/* Timeline container */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0 max-w-7xl mx-auto mt-20">
-          {parcoursData.map((item, index) => (
-            <div key={index} className="flex flex-col lg:flex-row lg:items-center">
-              {/* Parcours item */}
-              <div className="flex flex-col items-center text-center px-4 lg:px-8 max-w-70">
+        <div className="flex flex-col items-center justify-center max-w-7xl mx-auto mt-20">
+          {/* First map: Top content (category + descriptions + dates) */}
+          <div className="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-0 w-full">
+            {parcoursData.map((item, index) => (
+              <div key={`top-${index}`} className="flex-1 flex flex-col items-center text-center px-4 lg:px-8">
                 {/* Category title in bold */}
                 <h4 className="text-black font-bold text-base lg:text-lg">
                   {item.categoryTitle}
@@ -56,7 +57,7 @@ export default function Parcours() {
                 
                 {/* Top content */}
                 {(item.topDescription || item.topDate) && (
-                  <div className="mb-6 ">
+                  <div className="mb-6 max-w-xs">
                     {item.topDate && (
                       <p className="text-black">{item.topDate}</p>
                     )}
@@ -65,10 +66,41 @@ export default function Parcours() {
                     )}
                   </div>
                 )}
+              </div>
+            ))}
+          </div>
+
+          {/* Pink dots and connector lines */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-0 my-8 w-full">
+            {parcoursData.map((item, index) => (
+              <React.Fragment key={`dot-${index}`}>
+                {/* Container for the dot - takes 1/3 of space */}
+                <div className={`flex-1 flex items-center ${
+                  index === 0 ? 'justify-end lg:pr-30' : 
+                  index === parcoursData.length - 1 ? 'justify-start lg:pl-30' : 
+                  'justify-center'
+                }`}>
+                  <div className="w-4 h-4 rounded-full bg-accent-tertiary"></div>
+                </div>
                 
-                {/* Pink dot */}
-                <div className="w-4 h-4 rounded-full bg-accent-tertiary mb-3"></div>
-                
+                {/* Connector line between tiers (not after last item) */}
+                {index < parcoursData.length - 1 && (
+                  <>
+                    {/* Desktop horizontal line - between the tiers */}
+                    <div className="hidden lg:block w-30 h-0.5 bg-accent-tertiary shrink-0"></div>
+                    
+                    {/* Mobile vertical line */}
+                    <div className="lg:hidden h-16 w-0.5 bg-accent-tertiary"></div>
+                  </>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+
+          {/* Second map: Bottom content (titles + descriptions + dates) */}
+          <div className="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-0 w-full">
+            {parcoursData.map((item, index) => (
+              <div key={`bottom-${index}`} className="flex-1 flex flex-col items-center text-center px-4 lg:px-8">
                 {/* Title */}
                 <h3 className="text-accent-primary font-bold text-2xl lg:text-3xl mb-6 uppercase font-mtpalma">
                   {item.title}
@@ -86,27 +118,8 @@ export default function Parcours() {
                   </div>
                 )}
               </div>
-              
-              {/* Connector line (not after last item) */}
-              {index < parcoursData.length - 1 && (
-                <div className="hidden lg:block">
-                  <div className="flex items-center gap-2">
-                    <div className="w-16 h-0.5 bg-accent-tertiary"></div>
-                  </div>
-                </div>
-              )}
-              
-              {/* Mobile connector line */}
-              {index < parcoursData.length - 1 && (
-                <div className="lg:hidden flex justify-center my-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="h-12 w-0.5 bg-accent-tertiary"></div>
-                    <div className="h-12 w-0.5 bg-accent-tertiary"></div>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
