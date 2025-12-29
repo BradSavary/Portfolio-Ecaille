@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: "MTMPalma 67";
-  src: url("/fonts/MTMPalma67-regular.woff2") format("woff2"),
-       url("/fonts/MTMPalma67-regular.woff") format("woff");
+  src: url("/fonts/MTMPalma67-Regular.woff2") format("woff2"),
+       url("/fonts/MTMPalma67-Regular.woff") format("woff");
 }
 
 @font-face {
