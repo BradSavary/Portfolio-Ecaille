@@ -5,6 +5,7 @@ import InstagramLogo from "../svg/InstagramLogo";
 import LinkedinLogo from "../svg/LinkedinLogo";
 import PinterestLogo from "../svg/PinterestLogo";
 import SectionTitle from "../SectionTitle";
+import Link from "next/link";
 
 const socials = [
   {
@@ -50,7 +51,9 @@ export default function Footer() {
         </ul>
         </div>
         <div className="flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-between w-full lg:w-fit">
+        <Link href={"#top"}>
         <Arrow className="w-8 md:w-10 lg:w-12" />
+        </Link>
         <Logo2 className="w-32 md:w-40 lg:w-50" />
         </div>
     </footer>

@@ -6,6 +6,12 @@
        url("/fonts/MTMPalma67-regular.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Imperial Script";
+  src: url("/fonts/ImperialScriptRegular.woff2") format("woff2"),
+       url("/fonts/ImperialScriptRegular.woff") format("woff");
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -28,6 +34,8 @@ html {
   /* Font */
   --font-mtmpalma: "MTMPalma 67", Arial, Helvetica, sans-serif;
   --font-montserrat: "Montserrat", Arial, Helvetica, sans-serif;
+  --font-imperialscript: "Imperial Script", cursive, serif;
+  
 }
 
 @theme inline {
@@ -38,14 +46,25 @@ html {
   --color-accent-tertiary: var(--accent-tertiary);
   --font-mtpalma: var(--font-mtmpalma);
   --font-montserrat: var(--font-montserrat);
+  --font-imperialscript: var(--font-imperialscript);
 }
 
 
-body {
-  background: var(--background);
+/* Utility class for grid background */
+.bg-grid {
   background-image: url('/grid.svg');
   background-repeat: repeat;
   background-size: auto;
+}
+
+body {
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-montserrat);
+}
+
+body.bg-grid {
+  background-image: url('/grid.svg');
+  background-repeat: repeat;
+  background-size: auto;
 }
