@@ -9,7 +9,7 @@ interface LogoProps {
 export default function ParcoursSVG({ width = 38, height = 38, className }: LogoProps) {
   return (
     <Image 
-      src="/Parcours.svg" 
+      src="/parcours.svg" 
       alt="Parcours" 
       width={width} 
       height={height}

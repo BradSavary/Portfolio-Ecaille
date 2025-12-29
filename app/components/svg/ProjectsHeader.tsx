@@ -10,7 +10,7 @@ interface LogoProps {
 export default function ProjectsHeader({ width = 38, height = 38, className, id }: LogoProps) {
   return (
     <Image 
-      src="/ProjectsHeader.svg" 
+      src="/projectsheader.svg" 
       alt="Projets" 
       width={width} 
       height={height}
