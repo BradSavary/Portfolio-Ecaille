@@ -5,6 +5,7 @@ import { useState } from "react";
 import Nav from "../components/Section/Nav";
 import Footer from "../components/Section/Footer";
 import ProjectsHeader from "../components/svg/ProjectsHeader";
+import Link from "next/link";
 
 type Project = {
   id: number;
@@ -139,9 +140,9 @@ export default function Projects() {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-2 py-1 rounded-full transition-all border border-black ${
+            className={`px-2 py-1 rounded-full transition-all border ${
               selectedCategory === category
-                ? "bg-accent-tertiary text-white border-none"
+                ? "bg-accent-tertiary text-white border-accent-tertiary"
                 : " text-black hover:bg-accent-tertiary hover:text-white hover:border-accent-tertiary"
             }`}
           >
@@ -182,14 +183,14 @@ export default function Projects() {
 
               {/* Bouton */}
               <div>
-                <a
+                <Link
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-accent-secondary text-black rounded-md transition-colors underline"
+                  className="project-button inline-block px-6 py-3 bg-accent-secondary text-black rounded-md underline relative overflow-hidden"
                 >
-                  Voir le projet
-                </a>
+                  <span className="relative z-10">Voir le projet</span>
+                </Link>
               </div>
             </div>
           </div>
