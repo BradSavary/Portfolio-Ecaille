@@ -131,8 +131,12 @@ export default function Projects() {
       
       <section className="py-16 px-6 md:px-12 lg:px-20 relative flex flex-col justify-center items-center pt-30" id="projects">
         <div className="flex flex-col items-center mb-8 relative text-center">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-mtpalma">Tous mes projets</h1>
-        <h2 className="text-6xl top-4 md:text-7xl md:top-5 lg:text-8xl lg:top-7.5 font-imperialscript text-accent-tertiary absolute ">Tous mes projets</h2>
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-mtpalma">
+          {selectedCategory === "Tous" ? "Tous mes projets" : selectedCategory}
+        </h1>
+        <h2 className="text-6xl top-4 md:text-7xl md:top-5 lg:text-8xl lg:top-7.5 font-imperialscript text-accent-tertiary absolute ">
+          {selectedCategory === "Tous" ? "Tous mes projets" : selectedCategory}
+        </h2>
         </div>
         {/* Filtres de catégories */}
         <div className="flex flex-wrap gap-3 mt-8 mb-12 justify-center">
