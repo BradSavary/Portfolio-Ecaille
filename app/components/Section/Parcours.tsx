@@ -39,14 +39,14 @@ export default function Parcours() {
   return (
     <section className="py-25 px-6 md:px-12 lg:px-20 relative w-full flex flex-col bg-grid min-h-screen">
       <SectionTitle title="Mon parcours" starColor="orange" borderColor="black"/>
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none h-auto">
+      <div className="hidden lg:flex absolute inset-0 items-center justify-center pointer-events-none h-auto">
         <ParcoursSVG className="w-full rotate-90 lg:rotate-0 lg:max-w-7xl overflow-hidden h-auto object-cover z-1 " />
       </div>
       
       {/* Grille avec 3 colonnes */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mt-12 lg:mt-20">
+      <div className="relative z-10 flex justify-center flex-wrap gap-8 lg:gap-12 mt-12 lg:mt-20">
         {parcoursData.map((item, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
+          <div key={index} className="flex flex-col items-center text-center justify-between">
             {/* Partie haute - Catégorie et description */}
             <div className="mb-8">
               <h3 className="text-xl md:text-xl font-bold ">{item.categoryTitle}</h3>
@@ -59,7 +59,7 @@ export default function Parcours() {
             
             {/* Partie basse - Titre et localisation */}
             <div className="mt-8">
-              <h4 className="text-2xl md:text-3xl font-bold text-accent-primary font-mtpalma mb-3">{item.title}</h4>
+              <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent-primary font-mtpalma mb-3">{item.title}</h4>
               <p className="text-sm md:text-base font-medium">{item.bottomDescription}</p>
             </div>
           </div>
