@@ -25,7 +25,7 @@ export default function Profile() {
         <div className="w-2/3 h-0.5 bg-accent-tertiary"></div>
         <Star color="pink"/>
       </div>
-      <p>Je suis une étudiante de 20 ans, actuellement en 3ème année de BUT Métiers du Multimédia et de l'Internet (MMI) à Limoges. 
+      <p className="pt-4">Je suis une étudiante de 20 ans, actuellement en 3ème année de BUT Métiers du Multimédia et de l'Internet (MMI) à Limoges. 
       Je suis passionnée par de nombreuses formes d'expression artistique, comme le dessin (traditionnel et digital), scrapbooking, peinture, stylisme, et plus particulièrement le théâtre avec 6 ans de pratique à mon actif ! Je suis également une grande lectrice et amatrice de jeux vidéos.
       </p>
       </div>
