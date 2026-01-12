@@ -24,7 +24,7 @@ export default function SectionTitle({
   textClassName = "text-4xl md:text-5xl lg:text-7xl font-mtpalma",
   containerClassName
 }: SectionTitleProps) {
-  const defaultContainerClass = `flex items-center gap-2 p-4 md:p-5 lg:p-6 ${borderColorMap[borderColor]} border-1 max-w-fit`;
+  const defaultContainerClass = `flex items-center gap-2 p-4 md:p-5 lg:p-6 ${borderColorMap[borderColor]} border-1 max-w-fit z-10`;
   
   return (
     <div className={containerClassName || defaultContainerClass}>
