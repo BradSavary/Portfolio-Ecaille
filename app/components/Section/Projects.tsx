@@ -19,7 +19,7 @@ export default function Projects() {
       {/* Add project cards here*/}
       <div className="w-full min-w-70 justify-self-center items-center flex flex-col md:flex-row gap-4 justify-center mt-15">
         {/* Card 1 - UI/UX DESIGN */}
-        <div 
+        <Link href="/projects"
           className={`group/card relative w-full h-80 rounded-2xl border overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${
             hoveredCard === null ? 'md:w-1/2' : hoveredCard === 1 ? 'md:w-2/3' : 'md:w-1/3'
           }`}
@@ -71,10 +71,10 @@ export default function Projects() {
           <div className="absolute inset-0 flex items-center justify-center">
             <TitleProject1 className="w-48 md:w-64 drop-shadow-lg z-10"/>
           </div>
-        </div>
+        </Link>
 
         {/* Card 2 - GRAPHISME */}
-        <div 
+        <Link href="/projects" 
           className={`group/card relative w-full h-80 rounded-2xl border overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${
             hoveredCard === null ? 'md:w-1/2' : hoveredCard === 2 ? 'md:w-2/3' : 'md:w-1/3'
           }`}
@@ -126,7 +126,7 @@ export default function Projects() {
           <div className="absolute inset-0 flex items-center justify-center">
             <TitleProject2 className="w-48 md:w-64 drop-shadow-lg z-10"/>
           </div>
-        </div>
+        </Link>
       </div>
     <div className="mt-10 flex flex-row items-center gap-1">
     <Star color="pink" className="h-10"/>
