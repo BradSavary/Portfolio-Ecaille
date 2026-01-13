@@ -112,6 +112,14 @@ const projectsData: Project[] = [
     image: "/projects/oliveoil.webp",
     link: "https://www.figma.com/design/FUibtNbsQIOwUzDFc6GzqB/ELOISE-MARIEN---Olive-Oil?node-id=11-34&t=HpWAVKvaBplhalpI-1",
     categories: ["UI/UX"]
+  },
+    {
+    id: 13,
+    title: "Jeu vidéo",
+    description: "Réalisation d'un jeu vidéo utilisant la caméra en 24h",
+    image: "/projects/nuitmmi2026.png",
+    link: "https://nuit-mmi-2026.vercel.app/",
+    categories: ["Dev web", "Graphisme"]
   }
 ];
 
