@@ -66,7 +66,7 @@ export default function Projects() {
             </div>
           </div>
           {/* Pink overlay */}
-          <div className="absolute inset-0 bg-accent-tertiary/60 group-hover/card:bg-accent-tertiary/30 transition-all duration-500 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-accent-tertiary mix-blend-hard-light transition-all duration-500 pointer-events-none opacity-70"></div>
           {/* Title overlay */}
           <div className="absolute inset-0 flex items-center justify-center">
             <TitleProject1 className="w-48 md:w-64 drop-shadow-lg z-10"/>
@@ -121,7 +121,7 @@ export default function Projects() {
             </div>
           </div>
           {/* Pink overlay */}
-          <div className="absolute inset-0 bg-accent-tertiary/60 group-hover/card:bg-accent-tertiary/30 transition-all duration-500 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-accent-tertiary mix-blend-hard-light transition-all duration-500 pointer-events-none opacity-70"></div>
           {/* Title overlay */}
           <div className="absolute inset-0 flex items-center justify-center">
             <TitleProject2 className="w-48 md:w-64 drop-shadow-lg z-10"/>
