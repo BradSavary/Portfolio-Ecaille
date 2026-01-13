@@ -9,8 +9,10 @@ export default function Nav() {
 
   return (
     <nav className="absolute w-full flex justify-between py-4 md:py-8 px-6 md:px-8 z-50 bg-gradient-to-b from-black/60 via-black/30 to-transparent text-background">
-      <Logo className="w-24 md:w-32" />
-      
+      <Link href="/">
+        <Logo className="w-24 md:w-32" />
+      </Link>
+
       {/* Menu Desktop */}
       <div className="hidden md:flex gap-8 lg:gap-15">
         <Link href="/" className="text-base lg:text-lg font-thin transition-colors tracking-wider hover:text-accent-secondary">A propos</Link>
