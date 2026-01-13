@@ -103,17 +103,17 @@ export default function Projects() {
             </div>
             <div className="relative w-1/4 h-full">
               <Image 
-                src="/projects/bar.png" 
-                alt="Bar" 
+                src="/projects/intelligence-collective.webp" 
+                alt="Intelligence Collective" 
                 fill 
                 className="object-cover"
                 sizes="25vw"
               />
             </div>
             <div className="relative w-1/4 h-full">
-              <Image 
-                src="/projects/intelligence-collective.webp" 
-                alt="Intelligence Collective" 
+             <Image 
+                src="/projects/bar.png" 
+                alt="Bar" 
                 fill 
                 className="object-cover"
                 sizes="25vw"
