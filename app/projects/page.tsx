@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Nav from "../components/Section/Nav";
 import Footer from "../components/Section/Footer";
@@ -126,7 +126,7 @@ const projectsData: Project[] = [
 
 const categories = ["Tous", "Graphisme", "Dev web", "UI/UX"];
 
-export default function Projects() {
+function ProjectsContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category');
   const [selectedCategory, setSelectedCategory] = useState("Tous");
@@ -221,5 +221,13 @@ export default function Projects() {
       
       <Footer />
     </div>
+  );
+}
+
+export default function Projects() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Chargement...</div>}>
+      <ProjectsContent />
+    </Suspense>
   );
 }
