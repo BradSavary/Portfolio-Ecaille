@@ -102,7 +102,7 @@ const projectsData: Project[] = [
     title: "Benchmark",
     description: "Réalisation d'un benchmark complet en vue de la création d'un site web pour l'association Crealink.",
     image: "/projects/crealink.png",
-    link: "https://www.canva.com/design/DAGGcjw-4ow/s1A7VXIen9VhPB-Wz8Ensw/edit",
+    link: "./crealink.pdf",
     categories: ["UI/UX"]
   },
   {
