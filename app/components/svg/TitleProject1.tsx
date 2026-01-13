@@ -9,7 +9,7 @@ interface LogoProps {
 export default function TitleProject1({ width = 38, height = 38, className }: LogoProps) {
   return (
     <Image 
-      src="/TitleProject1.webp" 
+      src="/TitleProject1.svg" 
       alt="Title Project 1" 
       width={width} 
       height={height}
