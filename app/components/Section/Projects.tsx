@@ -2,6 +2,7 @@ import SectionTitle from "../SectionTitle";
 import Star from "../svg/Star";
 import TitleProject1 from "../svg/TitleProject1";
 import TitleProject2 from "../svg/TitleProject2";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -14,9 +15,11 @@ export default function Projects() {
       </div>
     <div className="mt-10 flex flex-row items-center gap-1">
     <Star color="pink" className="h-10"/>
+    <Link href="/projects">
     <p className="underline text-xl">
       Voir <span className="text-accent-primary">tous</span> les projets →
     </p>
+    </Link>
     </div>
     </section>
   );
