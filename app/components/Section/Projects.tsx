@@ -19,7 +19,7 @@ export default function Projects() {
       {/* Add project cards here*/}
       <div className="w-full min-w-70 justify-self-center items-center flex flex-col md:flex-row gap-4 justify-center mt-15">
         {/* Card 1 - UI/UX DESIGN */}
-        <Link href="/projects"
+        <Link href="/projects?category=UI/UX"
           className={`group/card relative w-full h-80 rounded-2xl border overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${
             hoveredCard === null ? 'md:w-1/2' : hoveredCard === 1 ? 'md:w-2/3' : 'md:w-1/3'
           }`}
@@ -74,7 +74,7 @@ export default function Projects() {
         </Link>
 
         {/* Card 2 - GRAPHISME */}
-        <Link href="/projects" 
+        <Link href="/projects?category=Graphisme" 
           className={`group/card relative w-full h-80 rounded-2xl border overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${
             hoveredCard === null ? 'md:w-1/2' : hoveredCard === 2 ? 'md:w-2/3' : 'md:w-1/3'
           }`}

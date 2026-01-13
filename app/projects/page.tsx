@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Nav from "../components/Section/Nav";
 import Footer from "../components/Section/Footer";
 import ProjectsHeader from "../components/svg/ProjectsHeader";
@@ -126,7 +127,15 @@ const projectsData: Project[] = [
 const categories = ["Tous", "Graphisme", "Dev web", "UI/UX"];
 
 export default function Projects() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
   const [selectedCategory, setSelectedCategory] = useState("Tous");
+
+  useEffect(() => {
+    if (categoryParam && categories.includes(categoryParam)) {
+      setSelectedCategory(categoryParam);
+    }
+  }, [categoryParam]);
 
   const filteredProjects = selectedCategory === "Tous" 
     ? projectsData 
