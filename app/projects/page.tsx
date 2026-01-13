@@ -191,7 +191,7 @@ export default function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="project-button inline-block px-6 py-3 bg-accent-secondary text-black rounded-md underline relative overflow-hidden"
+                  className="project-button inline-block px-6 py-3 bg-accent-secondary text-black rounded-md relative overflow-hidden"
                 >
                   <span className="relative z-10">Voir le projet</span>
                 </Link>
