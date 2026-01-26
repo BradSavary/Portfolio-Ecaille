@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -16,12 +18,24 @@ export default function CustomCursor() {
       setIsVisible(false);
     };
 
+    const handleMouseDown = () => {
+      setIsClicked(true);
+    };
+
+    const handleMouseUp = () => {
+      setIsClicked(false);
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
     document.body.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       document.body.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
     };
   }, [isVisible]);
 
@@ -39,18 +53,13 @@ export default function CustomCursor() {
         transition: "transform 0.1s ease-out",
       }}
     >
-      <svg
-        viewBox="0 0 48 72"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        width={24}
-        height={36}
-      >
-        <path
-          d="M24 0L26.885 31.6725L48 36L26.885 40.3275L24 72L21.115 40.3275L0 36L21.115 31.6725L24 0Z"
-          fill="#FF5E00"
-        />
-      </svg>
+      <Image
+        src={isClicked ? "/cursor-onclick.webp" : "/cursor.webp"}
+        alt="Custom cursor"
+        width={48}
+        height={72}
+        priority
+      />
     </div>
   );
 }
