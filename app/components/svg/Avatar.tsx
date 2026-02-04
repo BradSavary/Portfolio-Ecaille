@@ -6,16 +6,17 @@ interface LogoProps {
   className?: string;
 }
 
-export default function Avatar({ width = 38, height = 38, className }: LogoProps) {
+export default function Avatar({ width = 500, height = 500, className }: LogoProps) {
   return (
     <Image 
-      src="/Avatar.webp" 
+      src="/Avatar.png" 
       alt="Avatar" 
       width={width} 
       height={height}
       className={className}
       unoptimized={true}
       draggable={false}
+      style={{ width: '100%', height: 'auto' }}
     />
   );
 }

@@ -4,10 +4,10 @@ import Star from "../svg/Star";
 
 export default function Profile() {
   return (
-    <section className="py-25 px-6 md:px-12 lg:px-20 w-full flex bg-grid">
-      <div className="w-full lg:w-2/3 max-w-fit">
-      <div className="p-6 border ">
-        <div className="flex gap-4">
+    <section className="py-25 px-6 md:px-12 lg:px-20 w-full flex gap-6 bg-grid">
+      <div className="w-full lg:w-2/3 max-w-fit shrink-0 lg:max-w-2xl">
+      <div className="p-6 border max-w-2xl">
+        <div className="flex gap-4 ">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-mtpalma">Salut !</h2>
           <Star color="orange" className="w-16" />
         </div>
@@ -29,7 +29,9 @@ export default function Profile() {
       Je suis passionnée par de nombreuses formes d'expression artistique, comme le dessin (traditionnel et digital), scrapbooking, peinture, stylisme, et plus particulièrement le théâtre avec 6 ans de pratique à mon actif ! Je suis également une grande lectrice et amatrice de jeux vidéos.
       </p>
       </div>
-      <Avatar className="lg:block hidden w-1/3 min-w-98" />
+      <div className="lg:block hidden w-full shrink self-end">
+        <Avatar className="w-full h-auto" />
+      </div>
     </section>
   );
 }
