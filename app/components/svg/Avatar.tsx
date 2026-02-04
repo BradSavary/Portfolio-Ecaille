@@ -9,7 +9,7 @@ interface LogoProps {
 export default function Avatar({ width = 500, height = 500, className }: LogoProps) {
   return (
     <Image 
-      src="/Avatar.png" 
+      src="/avatar.png" 
       alt="Avatar" 
       width={width} 
       height={height}
