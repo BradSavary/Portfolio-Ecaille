@@ -27,6 +27,14 @@ const projectsData: Project[] = [
     categories: ["Graphisme"]
   },
   {
+    id: 14,
+    title: "Design d'application",
+    description: "Création et design d'une application sur le sujet suivant : santé mentale et bien-être des étudiants.",
+    image: "/projects/lumee.png",
+    link: "https://www.figma.com/design/lavHnlxuILVUZQd7KaOF25/Lumee-?node-id=0-1&t=O1MNfAedWEhDhbKT-1",
+    categories: ["UI/UX"]
+  },
+  {
     id: 2,
     title: "Illustrations",
     description: "\"Through the Forest\" : création d'une série d'illustrations fantasy / distopique.",
