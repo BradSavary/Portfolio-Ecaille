@@ -11,6 +11,7 @@ type ImageGalleryProps = {
 
 export default function ImageGallery({ images, isOpen, onClose }: ImageGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [previousIndex, setPreviousIndex] = useState<number | null>(null);
   const [slideDirection, setSlideDirection] = useState<"left" | "right" | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -34,12 +35,15 @@ export default function ImageGallery({ images, isOpen, onClose }: ImageGalleryPr
   const goTo = useCallback(
     (index: number) => {
       if (isAnimating || index === currentIndex) return;
-      setSlideDirection(index > currentIndex ? "right" : "left");
+      const direction = index > currentIndex ? "right" : "left";
+      setPreviousIndex(currentIndex);
+      setCurrentIndex(index);
+      setSlideDirection(direction);
       setIsAnimating(true);
       setTimeout(() => {
-        setCurrentIndex(index);
         setIsAnimating(false);
         setSlideDirection(null);
+        setPreviousIndex(null);
       }, 300);
     },
     [currentIndex, isAnimating]
@@ -83,6 +87,7 @@ export default function ImageGallery({ images, isOpen, onClose }: ImageGalleryPr
   useEffect(() => {
     if (!isOpen) {
       setCurrentIndex(0);
+      setPreviousIndex(null);
       setSlideDirection(null);
       setIsAnimating(false);
     }
@@ -95,7 +100,6 @@ export default function ImageGallery({ images, isOpen, onClose }: ImageGalleryPr
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center"
-      onClick={onClose}
     >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
@@ -103,13 +107,13 @@ export default function ImageGallery({ images, isOpen, onClose }: ImageGalleryPr
       {/* Contenu */}
       <div
         ref={containerRef}
-        className="relative z-10 flex flex-col items-center gap-6 w-full max-w-5xl px-4 py-8"
+        className="relative z-10 flex flex-col items-center gap-6 w-full max-w-5xl px-12 py-12"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Bouton fermer */}
         <button
           onClick={onClose}
-          className="absolute top-0 left-4 md:left-0 text-white hover:text-accent-tertiary transition-colors z-20"
+          className="absolute top-8 right-4 md:right-0 text-white hover:text-accent-tertiary transition-colors z-20"
           aria-label="Fermer la galerie"
         >
           <svg
@@ -134,7 +138,7 @@ export default function ImageGallery({ images, isOpen, onClose }: ImageGalleryPr
           <button
             onClick={goPrev}
             disabled={currentIndex === 0}
-            className={`absolute left-0 md:-left-12 z-20 p-2 text-white transition-all ${
+            className={`absolute left-0 md:-left-16 z-20 p-2 text-white transition-all ${
               currentIndex === 0
                 ? "opacity-30"
                 : "hover:text-accent-secondary hover:scale-110"
@@ -157,14 +161,34 @@ export default function ImageGallery({ images, isOpen, onClose }: ImageGalleryPr
           </button>
 
           {/* Container de l'image avec animation slide */}
-          <div className="relative w-full aspect-video overflow-hidden rounded-2xl">
+          <div className="relative w-full aspect-video overflow-hidden">
+            {/* Image sortante (précédente) */}
+            {isAnimating && previousIndex !== null && (
+              <div
+                className={`absolute inset-0 ${
+                  slideDirection === "right"
+                    ? "animate-slide-out-left"
+                    : "animate-slide-out-right"
+                }`}
+              >
+                <Image
+                  src={images[previousIndex]}
+                  alt={`Image ${previousIndex + 1}`}
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
+            )}
+
+            {/* Image courante (entrante si animation, statique sinon) */}
             <div
-              className={`absolute inset-0 transition-transform duration-300 ease-in-out ${
+              className={`absolute inset-0 ${
                 isAnimating
                   ? slideDirection === "right"
-                    ? "-translate-x-full"
-                    : "translate-x-full"
-                  : "translate-x-0"
+                    ? "animate-slide-in-right"
+                    : "animate-slide-in-left"
+                  : ""
               }`}
             >
               <Image
@@ -182,7 +206,7 @@ export default function ImageGallery({ images, isOpen, onClose }: ImageGalleryPr
           <button
             onClick={goNext}
             disabled={currentIndex === images.length - 1}
-            className={`absolute right-0 md:-right-12 z-20 p-2 text-white transition-all ${
+            className={`absolute right-0 md:-right-16 z-20 p-2 text-white transition-all ${
               currentIndex === images.length - 1
                 ? "opacity-30"
                 : "hover:text-accent-secondary hover:scale-110"

@@ -29,6 +29,14 @@ const projectsData: Project[] = [
     categories: ["Graphisme"]
   },
   {
+    id: 15,
+    title: "Illustrations diverses",
+    description: "Illustrations diverses : originales et redraws",
+    image: "/projects/gallery/Secret_land-low.png",
+    gallery: ["/projects/gallery/Secret_land-low.png", "/projects/gallery/Lost_soda_got_a_new_captain-low.png", "/projects/gallery/LuneDeGivre-_Secret_Santa.png", "/projects/gallery/Big_ahh_cats-low.png"],
+    categories: ["Graphisme"]
+  },
+  {
     id: 14,
     title: "Design d'application",
     description: "Création et design d'une application sur le sujet suivant : santé mentale et bien-être des étudiants.",
@@ -131,14 +139,6 @@ const projectsData: Project[] = [
     image: "/projects/nuitmmi2026.png",
     link: "https://nuit-mmi-2026.vercel.app/",
     categories: ["Dev web", "Graphisme"]
-  },
-  {
-    id: 15,
-    title: "Illustrations diverses",
-    description: "Illustrations diverses : originales et redraws",
-    image: "/projects/gallery/Secret_land-low.png",
-    gallery: ["/projects/gallery/Secret_land-low.png", "/projects/gallery/Lost_soda_got_a_new_captain-low.png", "/projects/gallery/LuneDeGivre-_Secret_Santa.png", "/projects/gallery/Big_ahh_cats-low.png"],
-    categories: ["Graphisme"]
   }
 ];
 
