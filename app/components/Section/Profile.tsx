@@ -5,7 +5,7 @@ import Star from "../svg/Star";
 export default function Profile() {
   return (
     <section className="py-25 px-6 md:px-12 lg:px-20 w-full flex gap-6 bg-grid">
-      <div className="w-full lg:w-2/3 max-w-fit shrink-0 lg:max-w-2xl">
+      <div className="w-full lg:w-2/3 max-w-fit shrink-0 lg:max-w-3xl">
       <div className="p-6 border max-w-2xl">
         <div className="flex gap-4 ">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-mtpalma">Salut !</h2>
@@ -30,7 +30,7 @@ export default function Profile() {
       </p>
       </div>
       <div className="lg:block hidden w-full shrink self-end">
-        <Avatar className="w-full h-auto" />
+        <Avatar className="w-full h-auto max-w-3xl justify-self-end" />
       </div>
     </section>
   );
