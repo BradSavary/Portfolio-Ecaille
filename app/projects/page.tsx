@@ -7,13 +7,15 @@ import Nav from "../components/Section/Nav";
 import Footer from "../components/Section/Footer";
 import ProjectsHeader from "../components/svg/ProjectsHeader";
 import Link from "next/link";
+import ImageGallery from "../components/ImageGallery";
 
 type Project = {
   id: number;
   title: string;
   description: string;
   image: string;
-  link: string;
+  link?: string;
+  gallery?: string[];
   categories: string[];
 };
 
@@ -129,6 +131,14 @@ const projectsData: Project[] = [
     image: "/projects/nuitmmi2026.png",
     link: "https://nuit-mmi-2026.vercel.app/",
     categories: ["Dev web", "Graphisme"]
+  },
+  {
+    id: 15,
+    title: "Illustrations diverses",
+    description: "Illustrations diverses : originales et redraws",
+    image: "/projects/gallery/Secret_land-low.png",
+    gallery: ["/projects/gallery/Secret_land-low.png", "/projects/gallery/Lost_soda_got_a_new_captain-low.png", "/projects/gallery/LuneDeGivre-_Secret_Santa.png", "/projects/gallery/Big_ahh_cats-low.png"],
+    categories: ["Graphisme"]
   }
 ];
 
@@ -138,6 +148,13 @@ function ProjectsContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category');
   const [selectedCategory, setSelectedCategory] = useState("Tous");
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+
+  const openGallery = (images: string[]) => {
+    setGalleryImages(images);
+    setGalleryOpen(true);
+  };
 
   useEffect(() => {
     if (categoryParam && categories.includes(categoryParam)) {
@@ -212,20 +229,36 @@ function ProjectsContent() {
 
               {/* Bouton */}
               <div>
-                <Link
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-button inline-block px-6 py-3 bg-accent-secondary text-black rounded-md relative overflow-hidden"
-                >
-                  <span className="relative z-10">Voir le projet</span>
-                </Link>
+                {project.gallery ? (
+                  <button
+                    onClick={() => openGallery(project.gallery!)}
+                    className="project-button inline-block px-6 py-3 bg-accent-secondary text-black rounded-md relative overflow-hidden"
+                  >
+                    <span className="relative z-10">Voir le projet</span>
+                  </button>
+                ) : project.link ? (
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-button inline-block px-6 py-3 bg-accent-secondary text-black rounded-md relative overflow-hidden"
+                  >
+                    <span className="relative z-10">Voir le projet</span>
+                  </Link>
+                ) : null}
               </div>
             </div>
           </div>
         ))}
       </div>
       </section>
+
+      {/* Galerie d'images */}
+      <ImageGallery
+        images={galleryImages}
+        isOpen={galleryOpen}
+        onClose={() => setGalleryOpen(false)}
+      />
       
       <Footer />
     </div>
