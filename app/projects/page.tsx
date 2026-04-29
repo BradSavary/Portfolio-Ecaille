@@ -38,16 +38,16 @@ const projectsData: Project[] = [
   },
   {
     id: 16,
-    title: "Illustrations vinyles",
-    description: "Peintures réalisées pour décorer des vinyles sur différents thèmes",
+    title: "Peinture sur vinyles",
+    description: "Création de vinyles personnalisés, à la peinture acrylique. ",
     image: "/projects/vinyle/vinyle1.jpg",
     gallery: ["/projects/vinyle/vinyle1.jpg", "/projects/vinyle/vinyle2.jpg", "/projects/vinyle/vinyle3.jpg", "/projects/vinyle/vinyle4.jpg"],
     categories: ["Graphisme"]
   },
   {
     id: 17,
-    title: "Illustrations affiches",
-    description: "Dessin d'une affiche pour un évènement d'une association locale",
+    title: "Smash League Limoges",
+    description: "Réalisation d'une affiche pour un évènement de l'association Smash League Limoges. Dans l'univers du jeu vidéo Smash Bros.",
     image: "/projects/Smash-League-Limoges.jpg",
     gallery: ["/projects/Smash-League-Limoges.jpg", "/projects/Smash-League-Limoges-text.jpg"],
     categories: ["Graphisme"]
