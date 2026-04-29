@@ -37,6 +37,22 @@ const projectsData: Project[] = [
     categories: ["Graphisme"]
   },
   {
+    id: 16,
+    title: "Illustrations vinyles",
+    description: "Peintures réalisées pour décorer des vinyles sur différents thèmes",
+    image: "/projects/vinyle/vinyle1.jpg",
+    gallery: ["/projects/vinyle/vinyle1.jpg", "/projects/vinyle/vinyle2.jpg", "/projects/vinyle/vinyle3.jpg", "/projects/vinyle/vinyle4.jpg"],
+    categories: ["Graphisme"]
+  },
+  {
+    id: 17,
+    title: "Illustrations affiches",
+    description: "Dessin d'une affiche pour un évènement d'une association locale",
+    image: "/projects/Smash-League-Limoges.jpg",
+    gallery: ["/projects/Smash-League-Limoges.jpg", "/projects/Smash-League-Limoges-text.jpg"],
+    categories: ["Graphisme"]
+  },
+  {
     id: 14,
     title: "Design d'application",
     description: "Création et design d'une application sur le sujet suivant : santé mentale et bien-être des étudiants.",
