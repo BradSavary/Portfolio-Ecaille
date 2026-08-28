@@ -140,14 +140,6 @@ const projectsData: Project[] = [
     link: "./crealink.pdf",
     categories: ["UI/UX"]
   },
-  {
-    id: 12,
-    title: "Landing Page",
-    description: "Réalisation d'une landing page pour une marque italienne d'huile d'olive.",
-    image: "/projects/oliveoil.webp",
-    link: "https://www.figma.com/design/FUibtNbsQIOwUzDFc6GzqB/ELOISE-MARIEN---Olive-Oil?node-id=11-34&t=HpWAVKvaBplhalpI-1",
-    categories: ["UI/UX"]
-  },
     {
     id: 13,
     title: "Jeu vidéo",
