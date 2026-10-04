@@ -8,25 +8,27 @@ import SectionTitle from "../SectionTitle";
 import Link from "next/link";
 
 const socials = [
-  {
-    name: "Behance",
-    url: "https://www.behance.net/marieneloise1",
-    icon: <BehanceLogo />
-  },
-  {
+    {
     name: "Instagram", 
     url: "https://www.instagram.com/ecaille.4rt/",
     icon: <InstagramLogo />
   },
+  
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/eloise-marien/",
     icon: <LinkedinLogo />
   },
+  
   {
     name: "Pinterest",
     url: "https://fr.pinterest.com/yooeslie/",
     icon: <PinterestLogo />
+  },
+  {
+    name: "Behance",
+    url: "https://www.behance.net/marieneloise1",
+    icon: <BehanceLogo />
   }
 ];
 

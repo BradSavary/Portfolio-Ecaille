@@ -20,17 +20,24 @@ const parcoursData: ParcoursItem[] = [
     bottomDescription: "Marguerite de Navarre - Bourges (18)",
   },
   {
-    categoryTitle: "Obtention du DUT MMI",
-    title: "BUT MMI",
-    topDate: "08/2025",
-    topDescription: "Je valide ma 2e année de BUT Métiers du Multimédia et de l'Internet, en maîtrisant des compétences de UI/UX design, graphisme, développement web et en communication.",
-    bottomDescription: "IUT du Limousin - Limoges (87)",
-  },
-  {
     categoryTitle: "Stage chez l'ACDGB",
     title: "1ER STAGE",
     topDate: "11 semaines - 04/25 à 06/25",
     topDescription: "Ma mission était de réaliser un site internet pour la formation Génie Biologique à l'échelle nationale.  En passant par l'analyse, les prototypes  au développement.",
+    bottomDescription: "IUT du Limousin - Limoges (87)",
+  },
+  {
+    categoryTitle: "Stage à la CCI de Limoges",
+    title: "2EME STAGE",
+    topDate: "16 semaines - 04/26 à 08/26",
+    topDescription: "J'ai intégré le service communication de la CCI de Limgoges, où j'ai pu travailler en équipe et en autonomie sur des projets d'inforgraphie, de motion design, de vidéos pour les réseaux sociaux, et de développement web.",
+    bottomDescription: "CCI de Limoges et de la Haute-Vienne - Limoges (87)",
+  },
+  {
+    categoryTitle: "Obtention du BUT MMI",
+    title: "BUT MMI",
+    topDate: "08/2026",
+    topDescription: "Je valide ma 3e année de BUT Métiers du Multimédia et de l'Internet, en maîtrisant des compétences d'UI/UX design, graphisme, développement web et en communication.",
     bottomDescription: "IUT du Limousin - Limoges (87)",
   },
 ];
@@ -48,7 +55,7 @@ export default function Parcours() {
         {parcoursData.map((item, index) => (
           <div key={index} className="flex flex-col items-center text-center justify-between">
             {/* Partie haute - Catégorie et description */}
-            <div className="mb-8">
+            <div className="mb-8 justify-center">
               <h3 className="text-xl md:text-xl font-bold ">{item.categoryTitle}</h3>
               <h4 className="text-base md:text-lg ">{item.topDate}</h4>
               <p className="text-sm md:text-base leading-relaxed max-w-xs">{item.topDescription}</p>

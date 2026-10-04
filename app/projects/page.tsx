@@ -21,19 +21,11 @@ type Project = {
 
 const projectsData: Project[] = [
   {
-    id: 1,
-    title: "Création de flyers",
-    description: "Pour présenter la programmation des concerts à venir de la fédération Hiero.",
-    image: "/projects/flyers.webp",
-    link: "https://www.figma.com/proto/6vxkUCSFL26RfqU7vs5oNk/SAE-Flyers?page-id=0%3A1&node-id=2-2&viewport=763%2C498%2C0.13&t=MVxjcgHsr3a0Pd6g-1&scaling=contain&content-scaling=fixed",
-    categories: ["Graphisme"]
-  },
-  {
     id: 15,
     title: "Illustrations diverses",
     description: "Illustrations diverses : originales et redraws",
     image: "/projects/gallery/Secret_land-low.png",
-    gallery: ["/projects/gallery/Secret_land-low.png", "/projects/gallery/Lost_soda_got_a_new_captain-low.png", "/projects/gallery/LuneDeGivre-_Secret_Santa.png", "/projects/gallery/Big_ahh_cats-low.png"],
+    gallery: ["/projects/gallery/Secret_land-low.png", "/projects/gallery/Lost_soda_got_a_new_captain-low.png", "/projects/gallery/LuneDeGivre-_Secret_Santa.png", "/projects/gallery/Big_ahh_cats-low.png", "/projects/gallery/Through-your-eyes.webp"],
     categories: ["Graphisme"]
   },
   {
@@ -44,10 +36,18 @@ const projectsData: Project[] = [
     gallery: ["/projects/vinyle/vinyle1.jpg", "/projects/vinyle/vinyle2.jpg", "/projects/vinyle/vinyle3.jpg", "/projects/vinyle/vinyle4.jpg"],
     categories: ["Graphisme"]
   },
+    {
+    id: 1,
+    title: "Création de flyers",
+    description: "Pour présenter la programmation des concerts à venir de la fédération Hiero.",
+    image: "/projects/flyers.webp",
+    link: "https://www.figma.com/proto/6vxkUCSFL26RfqU7vs5oNk/SAE-Flyers?page-id=0%3A1&node-id=2-2&viewport=763%2C498%2C0.13&t=MVxjcgHsr3a0Pd6g-1&scaling=contain&content-scaling=fixed",
+    categories: ["Graphisme"]
+  },
   {
     id: 17,
     title: "Smash League Limoges",
-    description: "Réalisation d'une affiche pour un évènement de l'association Smash League Limoges. Dans l'univers du jeu vidéo Smash Bros.",
+    description: "Réalisation d'affiches pour l'association Smash League Limoges. Dans l'univers du jeu vidéo Smash Bros.",
     image: "/projects/Smash-League-Limoges.jpg",
     gallery: ["/projects/Smash-League-Limoges.jpg", "/projects/Smash-League-Limoges-text.jpg"],
     categories: ["Graphisme"]
@@ -60,14 +60,14 @@ const projectsData: Project[] = [
     link: "https://www.figma.com/design/lavHnlxuILVUZQd7KaOF25/Lumee-?node-id=0-1&t=O1MNfAedWEhDhbKT-1",
     categories: ["UI/UX"]
   },
-  {
-    id: 2,
-    title: "Illustrations",
-    description: "\"Through the Forest\" : création d'une série d'illustrations fantasy / distopique.",
-    image: "/projects/illustrations.webp",
-    link: "https://www.behance.net/gallery/240114529/Trough-your-eyes",
-    categories: ["Graphisme"]
-  },
+  // {
+  //   id: 2,
+  //   title: "Illustrations",
+  //   description: "\"Through the Forest\" : création d'une série d'illustrations fantasy / distopique.",
+  //   image: "/projects/illustrations.webp",
+  //   link: "https://www.behance.net/gallery/240114529/Trough-your-eyes",
+  //   categories: ["Graphisme"]
+  // },
   {
     id: 3,
     title: "Site E-commerce",
