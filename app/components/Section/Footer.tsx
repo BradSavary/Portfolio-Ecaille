@@ -15,7 +15,7 @@ const socials = [
   },
   {
     name: "Instagram", 
-    url: "https://www.instagram.com/ecaille.design/",
+    url: "https://www.instagram.com/ecaille.4rt/",
     icon: <InstagramLogo />
   },
   {
